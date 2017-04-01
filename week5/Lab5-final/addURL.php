@@ -66,10 +66,9 @@ Add URL Page
                             ":site_id" => $site_id,
                             ":link" => $link);
                         $stmt->execute($binds);
-               //     }
+                    }
                 }
             }
-        }
         }echo $results;
         ?>
         <!-- display errors if there are any -->

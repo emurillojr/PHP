@@ -5,7 +5,6 @@ this page will allow the user to add a new corporation
 also has a link to view the data
 -->
 
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -70,7 +69,6 @@ also has a link to view the data
         }
         ?>
 
-
         <h1><?php echo $results; ?></h1>
 
         <h1>Add a new Corporation</h1>
@@ -88,16 +86,11 @@ also has a link to view the data
             <br />
             <br />
             <br />
-
-
             <input type="submit" value="Submit" />
         </form>
         <br />
 
         <p><a href="View.php">View Data</a></p>
 
-
     </body>
 </html>
-
-

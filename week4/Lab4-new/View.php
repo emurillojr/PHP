@@ -5,7 +5,7 @@ this page will show the user all the corporations listed / data
 added drop box with selection and search box.
 
 -->
- 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,15 +21,12 @@ added drop box with selection and search box.
     </head>
     <h1>Corporation Data</h1>
     <body>
-       
+
         <?php
         // include dbconnect, function, variables.
         include './functions/dbconnect.php';
         include './functions/functions.php';
         $results = getAllData();
-       
-
-
 
         // linking action to action
         $action = filter_input(INPUT_GET, 'action');
@@ -40,61 +37,46 @@ added drop box with selection and search box.
 
             $searchWord = filter_input(INPUT_GET, 'searchWord');
             $column = filter_input(INPUT_GET, 'column');
-
             $results = searchAllbySelect($column, $searchWord);
-           // ADDED COUNT AND DISPLAY RESULTS
-            if (Count($results)>=1){
+            // ADDED COUNT AND DISPLAY RESULTS
+            if (Count($results) >= 1) {
                 echo Count($results) . "   Results Found";
-                }
-            else{
+            } else {
                 echo "  No results found";
-            
             }
         }
-        
- 
-    ?>
-        
+        ?>
+
         <?php
         // if to pull for Sort submit button
         if ($action === 'Sort') {
             // get and  link name and value of ASC button 
-            
-            
-         // UPDATED
-                if (filter_input(INPUT_GET,'sort') == 'ASC') {
-                    // function to get columns, order by ASC, and produce results
-                    $column = filter_input(INPUT_GET, 'column');
-                    $order = 'ASC';
-                    $results = sortorder($column, $order);
-                    // get and  link name and value of DESC button     
-                } elseif (filter_input(INPUT_GET,'sort') == 'DESC') {
-                    // function to get columns, order by DESC, and produce results
-                    $column = filter_input(INPUT_GET, 'column');
-                    $order = 'DESC';
-                    $results = sortorder($column, $order);
-                   
-                }
-              // ADDED COUNT AND DISPLAY RESULTS
-                if (Count($results)>=1){
-                echo Count($results) . "   Results Found";
-                }
-                else{
-                echo "  No results found";
-            
+            // UPDATED
+            if (filter_input(INPUT_GET, 'sort') == 'ASC') {
+                // function to get columns, order by ASC, and produce results
+                $column = filter_input(INPUT_GET, 'column');
+                $order = 'ASC';
+                $results = sortorder($column, $order);
+                // get and  link name and value of DESC button     
+            } elseif (filter_input(INPUT_GET, 'sort') == 'DESC') {
+                // function to get columns, order by DESC, and produce results
+                $column = filter_input(INPUT_GET, 'column');
+                $order = 'DESC';
+                $results = sortorder($column, $order);
             }
-                 
-            
-            
+            // ADDED COUNT AND DISPLAY RESULTS
+            if (Count($results) >= 1) {
+                echo Count($results) . "   Results Found";
+            } else {
+                echo "  No results found";
+            }
         }
-      
-        
 
         // include the forms 
         include './includes/searchDropbox.php';
         include './includes/SortADradio.php';
         ?>
-       
+
         <!-- link button to go back to beginning original display page / order -->
         <br>
         <br>

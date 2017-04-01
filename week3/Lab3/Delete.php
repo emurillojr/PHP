@@ -42,7 +42,5 @@ this page links from the view page to allow user to delete the corporations info
 
         <p> <a href="View.php">View Page</a></p>
 
-
-
     </body>
 </html>

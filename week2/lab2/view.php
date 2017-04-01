@@ -20,9 +20,6 @@ View php page
         <h1>Total Information Saved:</h1>
     </header>
 
-
-
-
     <!-- Added style 
     black border for <table>, <th>, and <td> elements
     border-collapse to set whether table borders should be collapsed into a single border
@@ -43,10 +40,7 @@ View php page
         {
             text-align: left;
         }
-
     </style>
-
-
 
 </head>
 <body>
@@ -74,7 +68,7 @@ View php page
     <br>
     <br>
 
-<!-- class for table style and buttons-->
+    <!-- class for table style and buttons-->
     <table class="table table-striped">
         <thead>
             <tr>

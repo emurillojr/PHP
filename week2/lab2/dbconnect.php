@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Ernesto Murillo Lab 2 
  * 
  * Function 
  * To establish a database connection
  * @return PDO Object
- */  
+ */
 function getDatabase() {
     $config = array(
         'DB_DNS' => 'mysql:host=localhost;port=3306;dbname=PHPClassSummer2016',

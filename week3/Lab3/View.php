@@ -36,9 +36,7 @@ this page will allow the user to view all the corporations listed
         }
         ?>
 
-
         <p><a href="Create.php">Add a new Corporation</a></p> 
-
 
         <table class="table table-striped">
             <thead>
@@ -47,21 +45,18 @@ this page will allow the user to view all the corporations listed
             <br>
             <br>
             </tr>
-
             </thead>
 
             <!-- /* loop through each result to get back an array with values */  -->
 
             <?php foreach ($results as $row): ?> 
-            
                 <tr>
                     <td><?php echo $row['corp']; ?></td>
 
                     <td><a class="btn btn-default" href="Read.php?id=<?php echo $row['id']; ?>">Read</a></td>            
                     <td><a class="btn btn-success" href="Update.php?id=<?php echo $row['id']; ?>">Update</a></td>            
                     <td><a class="btn btn-danger" href="Delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>            
-                
-               
+
                 </tr>
             <?php endforeach; ?>
         </table>

@@ -5,7 +5,6 @@ this page will allow the user to Read all the corps data information without mak
 links back to view page, update and delete 
 -->
 
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -75,7 +74,6 @@ links back to view page, update and delete
                 $zipcode = $results['zipcode'];
                 $owner = $results['owner'];
                 $phone = $results['phone'];
-            
             } else {
                 die('Record ' . $id . ' not found');
             }
@@ -83,11 +81,13 @@ links back to view page, update and delete
         ?>
 
         <h1><?php echo $result; ?></h1>
-            <?php
-            $datetime = strtotime($row['date']);
-            $formatFordatetime = date("m/d/Y g:i A", $datetime);
-            ?>
-        
+
+        <?php
+        // added config and set as variable for date and time
+        $datetime = strtotime($results['incorp_dt']);
+        $formatFordatetime = date("m/d/Y g:i A", $datetime);
+        ?>
+
         <h1>Corporation Information Read Only</h1>
         <br />
         <br />
@@ -111,19 +111,14 @@ links back to view page, update and delete
 
         </form>
         <br />
-
     <tr>
-
-
         <td><a class="btn btn-warning" href="Update.php?id=<?php echo $results['id']; ?>">Update</a></td>            
         <td><a class="btn btn-danger" href="Delete.php?id=<?php echo $results['id']; ?>">Delete</a></td>            
     </tr>
-
     <br />
     <br />
     <br />
     <p> <a href="View.php">View page</a></p>
-
 
 </body>
 </html>

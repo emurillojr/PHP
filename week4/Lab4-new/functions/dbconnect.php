@@ -1,11 +1,11 @@
 <?php
+
 /** Ernesto Murillo 
  * dbconnect page inside functions folder with error message
  */
-
-/**Function to extablish a databse connection
+/* * Function to extablish a databse connection
  * @return PDO Object
- */  
+ */
 function getDatabase() {
     $config = array(
         'DB_DNS' => 'mysql:host=localhost;port=3306;dbname=PHPClassSummer2016',

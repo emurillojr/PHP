@@ -1,7 +1,6 @@
 <?php
 
-//Function connecting to the database(PHPClassSummer2016)
-// @return PDO Object
+// Ernesto Murillo Final - db connection function page
 
 function dbconnect() {
     $config = array(
@@ -9,7 +8,6 @@ function dbconnect() {
         'DB_USER' => 'root',
         'DB_PASSWORD' => ''
     );
-
     try {
         /* Create a Database connection and 
          * save it into the variable */

@@ -4,7 +4,6 @@ Update php page
 this page will allow the user to update the corporations information
 -->
 
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,9 +41,7 @@ this page will allow the user to update the corporations information
         $zipcode = '';
         $owner = '';
         $phone = '';
-        
-        // get catagories
-        
+
         /* see fuctions.php for clarification on this function */
         if (isPostRequest()) {
             $id = filter_input(INPUT_POST, 'id');
@@ -54,10 +51,7 @@ this page will allow the user to update the corporations information
             $owner = filter_input(INPUT_POST, 'owner');
             $phone = filter_input(INPUT_POST, 'phone');
 
-
-
             $stmt = $db->prepare("UPDATE corps SET corp = :corp, email = :email, zipcode = :zipcode, owner = :owner, phone = :phone WHERE id = :id");
-            //try catch
             $binds = array
                 (
                 ":id" => $id,
@@ -78,8 +72,7 @@ this page will allow the user to update the corporations information
             if (!isset($id)) {
                 die('Record not found');
             }
-            
-            //product _id
+
             $stmt = $db->prepare("SELECT * FROM corps where id = :id");
             $binds = array
                 (
@@ -94,7 +87,6 @@ this page will allow the user to update the corporations information
                 $owner = $results['owner'];
                 $phone = $results['phone'];
             } else {
-               //get rid of header
                 header('Location:view.php');
                 die('ID not found');
             }
@@ -102,21 +94,17 @@ this page will allow the user to update the corporations information
         ?>
 
         <p>
-        <?php if (isset($message)) {
-            echo $message;
-        } ?>
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
         </p>
-
 
         <h1>Update Corporation Data Information</h1>
         <br />
         <br />
-        <form method="post" action="#">  
-            
-            <!--
-            // add in part from categaories
-            -->
-            
+        <form method="post" action="#">            
             <a class="btn btn-success">Corporation Name: </a><br> <input type="text" value="<?php echo $corp ?>" name="corp" size="40"/>
             <br />
             <a class="btn btn-success">EMail: </a><br> <input type="text" value="<?php echo $email ?>" name="email" size="40"/>
@@ -130,7 +118,6 @@ this page will allow the user to update the corporations information
             <br />
             <br />
             <br />
-            <!-- need hidden for image   product id -->
             <input type="hidden" value="<?php echo $id; ?>" name="id" /> 
             <input type="submit" value="Update" />
         </form>
