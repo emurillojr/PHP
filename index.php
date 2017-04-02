@@ -7,7 +7,7 @@
     </head>
     <body>
         <?php
-        echo "Ernesto Murillo PHP Summer Class 2016 ";
+        echo "Ernesto Murillo PHP & MySQL Summer Class 2016 ";
         ?>
     </body>
 </html>
